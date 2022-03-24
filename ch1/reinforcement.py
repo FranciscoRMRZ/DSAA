@@ -14,4 +14,4 @@ def is_multiple(n, m):
     return False
 
 if __name__ == '__main__':
-    print(is_multiple(1_000_001,5))
+    print(is_multiple(1_000_000,5))
