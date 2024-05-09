@@ -7,7 +7,7 @@ def remove_backpaces(word: str) -> str:
     for char in word:
         if char != "#":
             stack.append(char)
-        else:
+        elif stack:
             stack.pop()
 
     return "".join(stack)
