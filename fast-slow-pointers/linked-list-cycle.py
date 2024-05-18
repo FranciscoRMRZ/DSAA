@@ -12,13 +12,13 @@ if __name__ == "__main__":
     second.next = third
     third.next = fourth
 
-    print(head.next.value)
-    print(second.next.value)
-    print(third.next.value)
+    print(has_cycle(head))
 
-    fourth.next = second
-
+    fourth.next = head
     print(has_cycle(head))
 
     fourth.next = second
+    print(has_cycle(head))
+
+    fourth.next = None
     print(has_cycle(head))
