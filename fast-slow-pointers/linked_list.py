@@ -6,22 +6,30 @@ class Node:
 
 def has_cycle(head: Node) -> bool:
     if not head or not head.next:
-        return False
         return None
 
     slow = head
-    fast = head.next
     fast = head
 
-    while fast != slow:
-        if not fast or not fast.next:
-            return False
     while fast and fast.next:
         slow = slow.next
         fast = fast.next.next
         if slow == fast:
             return slow
 
-    return True
     return None
 
+
+def find_cycle_start(head):
+    meeting_point = has_cycle(head)
+    if not meeting_point:
+        return None
+
+    slow = head
+    fast = meeting_point
+
+    while slow != fast:
+        slow = slow.next
+        fast = next
+
+    return slow
