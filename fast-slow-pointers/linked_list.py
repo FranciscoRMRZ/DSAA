@@ -22,6 +22,7 @@ def has_cycle(head: Node) -> bool:
 
 def find_cycle_start(head):
     meeting_point = has_cycle(head)
+
     if not meeting_point:
         return None
 
@@ -30,6 +31,6 @@ def find_cycle_start(head):
 
     while slow != fast:
         slow = slow.next
-        fast = next
+        fast = fast.next
 
-    return slow
+    return meeting_point
