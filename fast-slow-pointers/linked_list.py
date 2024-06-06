@@ -4,7 +4,7 @@ class Node:
         self.next = next
 
 
-def has_cycle(head: Node) -> bool:
+def has_cycle(head: Node) -> Node | None:
     if not head or not head.next:
         return None
 
