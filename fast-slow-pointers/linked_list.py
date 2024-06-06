@@ -34,3 +34,19 @@ def find_cycle_start(head):
         fast = fast.next
 
     return meeting_point
+
+
+def linked_list_middle(head):
+    # Initialize slow and fast pointers
+    slow, fast = head, head
+
+    # Run a loop to find the list end
+    # Since the fast pointer walks at double the speed of the slow poiinter
+    # by the time the end of the list is reaches, the slow pointer should
+    # be at the middle of  the list
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+
+    # Return the slow pointer
+    return slow
