@@ -26,5 +26,5 @@ def is_happy_number_tp(n: int) -> bool:
         slow = get_next(slow)
         fast = get_next(get_next(fast))
         if slow == fast:
-            return False
+            break
     return slow == 1
