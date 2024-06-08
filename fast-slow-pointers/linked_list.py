@@ -37,6 +37,7 @@ def find_cycle_start(head):
 
 
 def linked_list_middle(head):
+def linked_list_middle(head: Node) -> Node:
     # Initialize slow and fast pointers
     slow, fast = head, head
 
