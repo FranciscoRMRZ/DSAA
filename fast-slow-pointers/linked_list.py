@@ -63,3 +63,30 @@ def reverse_linked_list(head: Node) -> Node:
         current = next_node
 
     return previous
+
+
+def is_palindrome(head: Node) -> bool:
+    if head is None or head.next is None:
+        return True
+
+    # Find the middle of the linked list
+    list_middle = linked_list_middle(head)
+
+    # Reverse the second half of the linked list
+    second_half_start = reverse_linked_list(list_middle)
+
+    # Compare both list halves
+    first_half, second_half = head, second_half_start
+    result = True
+    while second_half:
+        if first_half.value != second_half.value:
+            result = False
+            break
+        first_half = first_half.next
+        second_half = second_half.next
+
+    # Restore the list
+    reverse_linked_list(second_half_start)
+
+    # Return the result
+    return result
