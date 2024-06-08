@@ -50,3 +50,16 @@ def linked_list_middle(head):
 
     # Return the slow pointer
     return slow
+
+
+def reverse_linked_list(head: Node) -> Node:
+    previous = None
+    current = head
+
+    while current:
+        next_node = current.next
+        current.next = previous
+        previous = current
+        current = next_node
+
+    return previous
